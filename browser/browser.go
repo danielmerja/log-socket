@@ -7,6 +7,9 @@ import (
 	"strings"
 )
 
+//go:embed viewer.html
+var webpage string
+
 func LogSocketViewHandler(w http.ResponseWriter, r *http.Request) {
 	wsResource := r.Host + r.URL.Path
 	if r.TLS != nil {
@@ -17,8 +20,5 @@ func LogSocketViewHandler(w http.ResponseWriter, r *http.Request) {
 	wsResource = strings.TrimSuffix(wsResource, "/") + "/ws"
 	homeTemplate.Execute(w, wsResource)
 }
-
-//go:embed viewer.html
-var webpage string
 
 var homeTemplate = template.Must(template.New("").Parse(webpage))

@@ -116,7 +116,7 @@ func (c *Client) Get() Entry {
 }
 
 // Trace prints out logs on trace level
-func Trace(args ...interface{}) {
+func Trace(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -129,7 +129,7 @@ func Trace(args ...interface{}) {
 }
 
 // Formatted print for Trace
-func Tracef(format string, args ...interface{}) {
+func Tracef(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -142,7 +142,7 @@ func Tracef(format string, args ...interface{}) {
 }
 
 // Trace prints out logs on trace level with newline
-func Traceln(args ...interface{}) {
+func Traceln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -155,7 +155,7 @@ func Traceln(args ...interface{}) {
 }
 
 // Debug prints out logs on debug level
-func Debug(args ...interface{}) {
+func Debug(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -168,7 +168,7 @@ func Debug(args ...interface{}) {
 }
 
 // Formatted print for Debug
-func Debugf(format string, args ...interface{}) {
+func Debugf(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -181,7 +181,7 @@ func Debugf(format string, args ...interface{}) {
 }
 
 // Debug prints out logs on debug level with a newline
-func Debugln(args ...interface{}) {
+func Debugln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -194,7 +194,7 @@ func Debugln(args ...interface{}) {
 }
 
 // Info prints out logs on info level
-func Info(args ...interface{}) {
+func Info(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -207,7 +207,7 @@ func Info(args ...interface{}) {
 }
 
 // Formatted print for Info
-func Infof(format string, args ...interface{}) {
+func Infof(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -220,7 +220,7 @@ func Infof(format string, args ...interface{}) {
 }
 
 // Info prints out logs on info level with a newline
-func Infoln(args ...interface{}) {
+func Infoln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -233,7 +233,7 @@ func Infoln(args ...interface{}) {
 }
 
 // Info prints out logs on info level
-func Notice(args ...interface{}) {
+func Notice(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -246,7 +246,7 @@ func Notice(args ...interface{}) {
 }
 
 // Formatted print for Info
-func Noticef(format string, args ...interface{}) {
+func Noticef(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -259,7 +259,7 @@ func Noticef(format string, args ...interface{}) {
 }
 
 // Info prints out logs on info level with a newline
-func Noticeln(args ...interface{}) {
+func Noticeln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -272,7 +272,7 @@ func Noticeln(args ...interface{}) {
 }
 
 // Warn prints out logs on warn level
-func Warn(args ...interface{}) {
+func Warn(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -285,7 +285,7 @@ func Warn(args ...interface{}) {
 }
 
 // Formatted print for Warn
-func Warnf(format string, args ...interface{}) {
+func Warnf(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -298,7 +298,7 @@ func Warnf(format string, args ...interface{}) {
 }
 
 // Newline print for Warn
-func Warnln(args ...interface{}) {
+func Warnln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -311,7 +311,7 @@ func Warnln(args ...interface{}) {
 }
 
 // Error prints out logs on error level
-func Error(args ...interface{}) {
+func Error(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -324,7 +324,7 @@ func Error(args ...interface{}) {
 }
 
 // Formatted print for error
-func Errorf(format string, args ...interface{}) {
+func Errorf(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -337,7 +337,7 @@ func Errorf(format string, args ...interface{}) {
 }
 
 // Error prints out logs on error level with a newline
-func Errorln(args ...interface{}) {
+func Errorln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -350,7 +350,7 @@ func Errorln(args ...interface{}) {
 }
 
 // Panic prints out logs on panic level
-func Panic(args ...interface{}) {
+func Panic(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -373,7 +373,7 @@ func Panic(args ...interface{}) {
 }
 
 // Formatted print for panic
-func Panicf(format string, args ...interface{}) {
+func Panicf(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -395,7 +395,7 @@ func Panicf(format string, args ...interface{}) {
 	panic(errors.New(output))
 }
 
-func Panicln(args ...interface{}) {
+func Panicln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -418,7 +418,7 @@ func Panicln(args ...interface{}) {
 }
 
 // Fatal prints out logs on fatal level
-func Fatal(args ...interface{}) {
+func Fatal(args ...any) {
 	output := fmt.Sprint(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -433,7 +433,7 @@ func Fatal(args ...interface{}) {
 }
 
 // Formatted print for fatal
-func Fatalf(format string, args ...interface{}) {
+func Fatalf(format string, args ...any) {
 	output := fmt.Sprintf(format, args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -447,7 +447,7 @@ func Fatalf(format string, args ...interface{}) {
 	os.Exit(1)
 }
 
-func Fatalln(args ...interface{}) {
+func Fatalln(args ...any) {
 	output := fmt.Sprintln(args...)
 	e := Entry{
 		Timestamp: time.Now(),
@@ -461,15 +461,15 @@ func Fatalln(args ...interface{}) {
 	os.Exit(1)
 }
 
-func Print(args ...interface{}) {
+func Print(args ...any) {
 	Info(args...)
 }
 
-func Printf(format string, args ...interface{}) {
+func Printf(format string, args ...any) {
 	Infof(format, args...)
 }
 
-func Println(args ...interface{}) {
+func Println(args ...any) {
 	Infoln(args...)
 }
 

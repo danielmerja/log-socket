@@ -8,8 +8,6 @@ import (
 	logger "github.com/taigrr/log-socket/log"
 )
 
-// var addr = flag.String("addr", "localhost:8080", "http service address")
-
 var upgrader = websocket.Upgrader{} // use default options
 
 func LogSocketHandler(w http.ResponseWriter, r *http.Request) {
