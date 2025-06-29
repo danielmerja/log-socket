@@ -10,6 +10,10 @@ import (
 
 var upgrader = websocket.Upgrader{} // use default options
 
+func SetUpgrader(u websocket.Upgrader) {
+	upgrader = u
+}
+
 func LogSocketHandler(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
