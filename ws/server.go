@@ -10,6 +10,10 @@ import (
 
 var upgrader = websocket.Upgrader{} // use default options
 
+func SetUpgrader(u websocket.Upgrader) {
+	upgrader = u
+}
+
 func LogSocketHandler(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -26,7 +30,7 @@ func LogSocketHandler(w http.ResponseWriter, r *http.Request) {
 		logJSON, _ := json.Marshal(logEvent)
 		err = c.WriteMessage(websocket.TextMessage, logJSON)
 		if err != nil {
-			logger.Error("write:", err)
+			logger.Warn("write:", err)
 			break
 		}
 	}
