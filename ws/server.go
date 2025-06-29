@@ -30,7 +30,7 @@ func LogSocketHandler(w http.ResponseWriter, r *http.Request) {
 		logJSON, _ := json.Marshal(logEvent)
 		err = c.WriteMessage(websocket.TextMessage, logJSON)
 		if err != nil {
-			logger.Error("write:", err)
+			logger.Warn("write:", err)
 			break
 		}
 	}
